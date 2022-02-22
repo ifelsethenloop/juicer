@@ -9,9 +9,12 @@ target = int(input('Desired nicotine strength (mg/ml): '))
 target_converted = target - current
 
 if current == 0:
-    print(' ({}ml bottle) / ({}mg/ml nicotine strength) x ({}mg/ml nicotine target strength) = '.format(amount, nic_base, target))
+    print(' ({}ml bottle) / ({}mg/ml nicotine strength) x ({}mg/ml nicotine target strength) = '\
+        .format(amount, nic_base, target))
     print(amount / nic_base * target,'ml')
 else:
-    print('You entered a current nicotine level of {}mg and target of {}mg, gap in \'mg\' is {}mg '.format(current, target, target_converted))
-    print(' ({}ml bottle) / ({}mg/ml nicotine strength) x ({}mg/ml nicotine target strength) = '.format(amount, nic_base, target_converted))
+    print('You entered a current nicotine level of {}mg and target of {}mg, gap in \'mg\' is {}mg ' \
+        .format(current, target, target_converted))
+    print(' ({}ml bottle) / ({}mg/ml nicotine strength) x ({}mg/ml nicotine target strength) = '\
+        .format(amount, nic_base, target_converted))
     print(amount / nic_base * target_converted, 'ml')
