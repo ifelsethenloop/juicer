@@ -25,10 +25,6 @@ def operation_result():
     target = request.form['Input4']
 
     try:
-        # amount = int(input('Bottle size in (ml): '))
-        # current = int(input('Current nicotine concentration of E-liquid (mg/ml): '))
-        # nic_base = int(input('Nicotine base strength (mg/ml): '))
-        # target = int(input('Desired nicotine strength (mg/ml): '))
 
         input1 = float(amount)
         input2 = float(current)
@@ -40,14 +36,10 @@ def operation_result():
         target_converted = float(input4) - float(input2)
 
         # Run calculation based on 0mg ejuice
-        # if current == 0:
-            # result = round(amount / nic_base * target, 2)
         if input2 == 0:
             result = round(input1 / input3 * input4, 2)
 
         # Run calculation based on  > 0mg ejuice
-        # else:
-        #     result = round(amount / nic_base * target_converted, 2)
         else:
             result = round(input1 / input3 * target_converted, 2)
 
