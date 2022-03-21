@@ -25,19 +25,19 @@
             <input type="submit" value="Submit"/>
             <input type="reset" value="RESET" style="color: red;"/>
         </form>
-          {% if calculation_success == True %}
-         <br/>
-         <p>The calculation for <br>
+        {% if calculation_success == True %}
+           <br/>
+           <p>The calculation for <br>
              {{input1}}ml bottle <br>
              {{input2}}mg current nicotine strength <br>
              {{input3}}mg nicotine base strength <br>
              {{input4}}mg target nicotine strength <br>
              is: <b>{{result}}</b></p>
-          {% endif %} 
-          {% if calculation_success == False %}
+        {% endif %} 
+        {% if calculation_success == False %}
          <br/>
          <p>{{error}}</p>
          <p>{{input1}} {{input2}} {{input3}} {{input4}} = "{{result}}"</p>
-          {% endif %} 
+        {% endif %} 
     </body>
 </html>
