@@ -56,10 +56,10 @@ def operation_result():
     except ValueError:
         return render_template(
             'index.html',
-            input1=input1,
-            input2=input2,
-            input3=input3,
-            input4=input4,
+            input1=amount,
+            input2=current,
+            input3=nic_base,
+            input4=target,
             result="Bad Input",
             calculation_success=False,
             error="Cannot perform calculation based on input"            
