@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html lang='en'>
     <head>
@@ -7,9 +9,11 @@
         <link rel="stylesheet" type="text/css"
         href="{{ url_for('static', filename='style.css') }}"/>
     </head>
-    <body>
-        <h1>Juicer - ejuice nicotine mixing calculator</h1>
+    {% block content %}
+    <body>        
+        <h1>{% block title %} Juicer - nicotine mixing calculator {% endblock %}</h1>
         <form method="post" action="{{ url_for('operation_result') }}" id="calculator_form">
+            <br/>
             <label for="Input1">Amount to make: </label>
             <input type="text" name="Input1" id="Input1">
             <br/>
@@ -21,6 +25,7 @@
             <br/>
             <label for="Input4">Target nicotine strength: </label>
             <input type="Input4" name="Input4" id="Input4">
+            <br/>
             <br/>
             <input type="submit" value="Submit"/>
             <input type="reset" value="RESET" style="color: red;"/>
@@ -40,4 +45,5 @@
          <p>{{input1}} {{input2}} {{input3}} {{input4}} = "{{result}}"</p>
         {% endif %} 
     </body>
+    {% endblock %}
 </html>

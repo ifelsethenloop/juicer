@@ -65,6 +65,12 @@ def operation_result():
             error="Cannot perform calculation based on input"            
         )
 
+@Flask_App.route('/other_page/', methods=['GET'])
+def other_page():
+    """ Display the other_page at '/other_page' """
+
+    return render_template('other_page.html')
+
 if __name__ == '__main__':
     Flask_App.debug = True
     Flask_App.run()
