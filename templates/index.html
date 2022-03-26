@@ -6,6 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Juicer</title>
+        <link rel="icon" href="static/tobacco.png">
         <link rel="stylesheet" type="text/css"
         href="{{ url_for('static', filename='style.css') }}"/>
     </head>
@@ -14,20 +15,20 @@
         <h1>{% block title %} Juicer - nicotine mixing calculator {% endblock %}</h1>
         <form method="post" action="{{ url_for('operation_result') }}" id="calculator_form">
             <br/>
-            <label for="Input1">Amount to make: </label>
+            <label for="Input1">Bottle size (ml): </label>
             <input type="text" name="Input1" id="Input1">
             <br/>
-            <label for="Input2">Current nicotine base: </label>
+            <label for="Input2">Current nicotine base (mg): </label>
             <input type="Input2" name="Input2" id="Input2">
             <br/>
-            <label for="Input3">Nicotine base used: </label>
+            <label for="Input3">Nicotine base used (mg): </label>
             <input type="Input3" name="Input3" id="Input3">
             <br/>
-            <label for="Input4">Target nicotine strength: </label>
+            <label for="Input4">Target nicotine strength (mg): </label>
             <input type="Input4" name="Input4" id="Input4">
             <br/>
             <br/>
-            <input type="submit" value="Submit"/>
+            <input type="submit" value="Submit" style="color: green;"/>
             <input type="reset" value="RESET" style="color: red;"/>
         </form>
         {% if calculation_success == True %}
@@ -37,12 +38,18 @@
              {{input2}}mg current nicotine strength <br>
              {{input3}}mg nicotine base strength <br>
              {{input4}}mg target nicotine strength <br>
-             is: <b>{{result}}</b></p>
+             is: <b>{{result}} ml</b></p>
+             <br/>
+             <div class="alert alert-success" role="alert">
+                Add <b>{{result}} ml</b> of your nicotine base strength to the bottle
+             </div>
         {% endif %} 
         {% if calculation_success == False %}
          <br/>
          <p>{{error}}</p>
-         <p>{{input1}} {{input2}} {{input3}} {{input4}} = "{{result}}"</p>
+         <div class="alert alert-danger" role="alert">
+            {{input1}} {{input2}} {{input3}} {{input4}} = "{{result}}"
+          </div>
         {% endif %} 
     </body>
     {% endblock %}
