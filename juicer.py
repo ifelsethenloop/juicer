@@ -62,7 +62,7 @@ def operation_result():
             input4=target,
             result="Bad Input",
             calculation_success=False,
-            error="Cannot perform calculation based on input"            
+            error="Cannot perform calculation based on input, please check your input"            
         )
 
 @Flask_App.route('/other_page/', methods=['GET'])
