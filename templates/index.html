@@ -33,18 +33,21 @@
         </form>
         {% if calculation_success == True %}
            <br/>
-           <p>The calculation for <br>
-             {{input1}}ml bottle <br>
-             {{input2}}mg current nicotine strength <br>
-             {{input3}}mg nicotine base strength <br>
-             {{input4}}mg target nicotine strength <br>
-             is:
-             <br/>
+           <div class="card">
+            <div class="card-body">
+                <p>The calculation for <br>
+                    {{input1}}ml bottle <br>
+                    {{input2}}mg current nicotine strength <br>
+                    {{input3}}mg nicotine base strength <br>
+                    {{input4}}mg target nicotine strength <br>
+                    is: <b>{{result}} ml</b><br/>
+            </div>
+          </div>
              <div class="alert alert-success" role="alert">
-                <b>{{result}} ml</b></p>
+                Add <b>{{result}} ml</b> of your nicotine base strength to the bottle
+            </p>
              </div>
              <br/>
-             Add <b>{{result}} ml</b> of your nicotine base strength to the bottle
         {% endif %} 
         {% if calculation_success == False %}
          <br/>
