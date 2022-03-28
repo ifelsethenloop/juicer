@@ -1,5 +1,5 @@
 # E-juice nicotine mixing calculator
-import math
+import os
 from flask import Flask, render_template, request
 
 Flask_App = Flask(__name__)
@@ -72,5 +72,5 @@ def other_page():
     return render_template('other_page.html')
 
 if __name__ == '__main__':
-    Flask_App.debug = True
-    Flask_App.run()
+    port = int(os.environ.get('PORT', 5000))
+    Flask_App.run(debug=True, host='0.0.0.0', port=port)
