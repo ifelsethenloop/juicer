@@ -10,4 +10,4 @@ COPY . /app
 
 ENTRYPOINT [ "python" ]
 
-CMD ["juicer.py"]
+CMD ["main.py"]
