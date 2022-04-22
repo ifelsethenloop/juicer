@@ -10,6 +10,4 @@ COPY . /app
 
 EXPOSE 8080
 
-ENTRYPOINT [ "python" ]
-
-CMD ["gunicorn", "-w 4", "-b", "0.0.0.0:8000", "main:app"]
+CMD ["./gunicorn.sh"]
