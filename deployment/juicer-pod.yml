@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: juicer
+spec:
+  containers:
+  - name: juicer
+    image: pelister/juicer:0.1
+    ports:
+    - containerPort: 8080
