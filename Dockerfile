@@ -10,4 +10,4 @@ COPY . /app
 
 EXPOSE 8080
 
-CMD ["./gunicorn.sh"]
+CMD ["python3","main.py"]
