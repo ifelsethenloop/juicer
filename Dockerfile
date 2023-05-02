@@ -10,4 +10,6 @@ COPY . /app
 
 EXPOSE 8080
 
-CMD ["python3","main.py"]
+ENTRYPOINT [ "python3" ]
+
+CMD ["main.py"]
